@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practice 4</title>
+</head>
+<body>
+
+<form onsubmit="return validateDOB()">
+    DOB:
+    <input type="text" id="dd" size="2" placeholder="dd"> /
+    <input type="text" id="mm" size="2" placeholder="mm"> /
+    <input type="text" id="yy" size="4" placeholder="yyyy">
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+
+<script>
+function validateDOB() {
+    let dd = document.getElementById("dd").value;
+    let mm = document.getElementById("mm").value;
+    let yy = document.getElementById("yy").value;
+
+    if (dd === "" || mm === "" || yy === "") {
+        alert("Date cannot be empty");
+        return false;
+    }
+
+    if (dd < 0 || dd > 31 || mm < 1 || mm > 12 || yy < 1900 || yy > 2016) {
+        alert("Invalid date");
+        return false;
+    }
+
+    return true;
+}
+</script>
+
+</body>
+</html>
