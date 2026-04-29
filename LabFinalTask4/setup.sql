@@ -1,0 +1,18 @@
+
+
+CREATE DATABASE IF NOT EXISTS student_db;
+USE student_db;
+
+CREATE TABLE IF NOT EXISTS accounts (
+    id       INT AUTO_INCREMENT PRIMARY KEY,
+    name     VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL,
+    role     VARCHAR(10)  NOT NULL DEFAULT 'user'
+);
+
+CREATE TABLE IF NOT EXISTS records (
+    id     INT AUTO_INCREMENT PRIMARY KEY,
+    name   VARCHAR(100) NOT NULL,
+    course VARCHAR(100) NOT NULL,
+    grade  VARCHAR(10)  NOT NULL
+);
